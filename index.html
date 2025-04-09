@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script defer src="index.js"></script>
+</head>
+
+<body class="bg-gray-100 font-sans">
+    <div class="flex flex-col md:flex-row h-screen">
+        <!-- Sidebar -->
+        <div id="sidebar"
+            class="fixed top-0 left-0 h-full w-64 bg-white shadow-md transform -translate-x-full transition-transform duration-300 z-50 md:relative md:translate-x-0 md:block">
+            <aside class="w-full">
+                <div class="flex justify-between items-center gap-6 p-4 border-b font-bold text-blue-600">
+                    <img src="images/logo.png" alt="Logo" class="w-24">
+                    <!-- Close icon (mobile only) -->
+                    <i id="menuClose"
+                        class="fa-solid fa-xmark text-[#0063A9] p-2 rounded-full cursor-pointer md:hidden"></i>
+                </div>
+                <nav class="mt-4">
+                    <ul>
+                        <li class="item hover:text-white">
+                            <div class="side-item flex items-center gap-2 px-4 py-2">
+                                <img src="images/Vector.png" alt="Dashboard-icon">Dashboard
+                            </div>
+                            <div class="flex items-center px-4">
+                                <i class="chev-down fa-solid fa-chevron-up text-[#4e4e4e] "></i>
+                            </div>
+                        </li>
+                        <li class="item">
+                            <div class="side-item flex items-center gap-2 px-4 py-2">
+                                <img src="images/Vector.png" alt="PM-icon">PM
+                            </div>
+                            <div class="flex items-center px-4">
+                                <i class="chev-down fa-solid fa-chevron-up text-[#4e4e4e]"></i>
+                            </div>
+                        </li>
+                        <li class="item">
+                            <div class="side-item flex items-center gap-2 px-4 py-2">
+                                <img src="images/Vector.png" alt="CM-icon">CM
+                            </div>
+                            <div class="flex items-center px-4">
+                                <i class="chev-down fa-solid fa-chevron-up text-[#4e4e4e]"></i>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+            </aside>
+        </div>
+
+
+        <!-- Main Content -->
+        <main class="flex-1 overflow-y-auto">
+            <!-- Header -->
+            <header class="flex justify-between items-center bg-white py-3 px-4 md:px-5 shadow-sm">
+                <!-- Left: Hamburger + Title -->
+                <div class="flex items-center gap-3">
+                    <!-- Hamburger Icon (Mobile Only) -->
+                    <i id="menuToggle"
+                        class="fa-solid fa-bars text-white bg-[#0063A9] p-3 rounded-full cursor-pointer md:hidden"></i>
+                    <h1 class="text-lg md:text-xl font-bold text-[#0063A9] whitespace-nowrap">Simplify Practice</h1>
+                </div>
+
+                <!-- Right: User Section -->
+                <div class="flex items-center gap-2 md:gap-3">
+                    <div class="relative">
+                        <i class="fa-regular fa-bell border border-black py-1 px-2 rounded-full text-sm text-black"></i>
+                        <span
+                            class="absolute -top-1 -right-1 text-[10px] bg-red-500 text-white rounded-full px-1 leading-none">1</span>
+                    </div>
+                    <img src="images/boy.png" class="w-8 h-8 rounded-full" alt="Profile" />
+                    <span class="hidden sm:inline text-sm font-medium">Kajal Singania</span>
+                    <i class="fa-solid fa-chevron-down text-black text-sm"></i>
+                </div>
+            </header>
+
+
+
+            <!-- Dashboard Cards -->
+            <section class="p-4">
+                <h2 class="text-2xl font-semibold mb-4">Dashboard</h2>
+                <div id="dashboardGrid" class="grid gap-4 xl:grid-cols-3">
+                </div>
+                <!-- New section for Meetings and Feedback -->
+                <div id="miniCardsContainer" class="mini-cards-container"></div>
+            </section>
+        </main>
+    </div>
+</body>
+
+</html>
